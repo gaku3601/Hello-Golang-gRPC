@@ -28,3 +28,7 @@ type HelloService struct{}
 func (h *HelloService) GetHello(ctx context.Context, req *pb.GetHelloRequest) (*pb.GetHelloResponse, error) {
 	return &pb.GetHelloResponse{Greeting: fmt.Sprintf("こんにちわ！！%vさん!", req.Name)}, nil
 }
+
+func (h *HelloService) GetProfile(ctx context.Context, req *pb.GetProfileRequest) (*pb.GetProfileResponse, error) {
+	return &pb.GetProfileResponse{Info: fmt.Sprintf("こんにちわ！！%vさん!あなたの歳は%dです!", req.Name, req.Age)}, nil
+}

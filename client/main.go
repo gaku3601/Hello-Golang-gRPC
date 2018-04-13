@@ -20,4 +20,9 @@ func main() {
 	res, err := client.GetHello(context.TODO(), message)
 	fmt.Printf("%v \n", res.Greeting)
 	fmt.Printf("error::%#v \n", err)
+
+	message2 := &pb.GetProfileRequest{Name: "gaku( ´ ▽ ` )", Age: 27}
+	res2, err := client.GetProfile(context.TODO(), message2)
+	fmt.Printf("%v \n", res2.Info)
+	fmt.Printf("error::%#v \n", err)
 }
